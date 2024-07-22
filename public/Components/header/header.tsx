@@ -1,37 +1,39 @@
 import Link from 'next/link'
 import React from 'react'
+import NavLink from '../navigation/navlink'
 
 const Header = () => {
     return (
         <>
-            <header className=''>
-                <div className='navbar bg-base-300 p-0' >
-                    <div className='navbar-start h-16'>
-                        <div className='dropdown'>
-                            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-
-                                5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            <header className='z-40 flex h-16 w-full items-center justify-between'>
+                <div className='navbar bg-base-300 p-0 flex items-center justify-between w-full'>
+                    <div className='navbar-start'>
+                        <div className='dropdown flex '>
+                            <label tabIndex={0} className="btn btn-ghost ">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+                                </svg>
                             </label>
-                            <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                                <li><Link tabIndex={0} href='/' className='bg-red-800'>Overview</Link></li>
-                                <li><Link href='/transactions'>Transactions</Link></li>
-                                <li><Link href='/categories'>Categories</Link></li>
-                                <li><Link href='/bank-account'>Bank Account</Link></li>
+                            <ul tabIndex={0} className="dropdown-content menu menu-compact flex lg:hidden mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                <li tabIndex={0}><NavLink name='Overview' href='/' bottomBorder={false} /></li>
+                                <li><NavLink name="Transactions1" href='/transactions' bottomBorder={false} /></li>
+                                <li><NavLink name="Categories" href='/categories' bottomBorder={false} /></li>
+                                <li><NavLink name="Bank Account" href='/bank-account' bottomBorder={false} /></li>
                             </ul>
                         </div>
                     </div>
-                    <div className='navbar-center hidden h-6 lg:flex'>
-                        <ul className="menu menu-horizontal h-full p-0">
-                            <li><Link className='bg-red-800' tabIndex={0} href='/'>Overview</Link></li>
-                            <li><Link href='/transactions'>Transactions</Link></li>
-                            <li><Link href='/categories'>Categories</Link></li>
-                            <li><Link href='/bank-account'>Bank Account</Link></li>
+                    <div className='navbar-center hidden lg:flex '>
+                        <ul className="menu menu-horizontal p-0">
+                            <li tabIndex={0}><NavLink name='Overview' href='/' bottomBorder={false} /></li>
+                            <li><NavLink name="Transactions" href='/transactions' bottomBorder={false} /></li>
+                            <li><NavLink name="Categories" href='/categories' bottomBorder={false} /></li>
+                            <li><NavLink name="Bank Account" href='/bank-account' bottomBorder={false} /></li>
                         </ul>
-
                     </div>
-                    <div className='navbar-end'>
+                    <div className='navbar-end hidden xl:flex'>
                         <div className='dropdown dropdown-end'>
-                            <label tabIndex={0} className="btn-circle btn-ghost avatar btn lg:hidden">
+                            <label className="btn-circle btn-ghost avatar btn lg:hidden">
+                                {/* Add any additional content here if needed */}
                             </label>
                         </div>
                     </div>
